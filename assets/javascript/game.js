@@ -20,8 +20,14 @@ dancersToGuess = ['Micheal Jackson', 'Usher', 'Justin Timberlake', 'Ciara'];
 // Get users guess
 	
 	document.addEventListener("keypress", function(event) {
-    
-})
+		// var changeToCode = event.keyCode;
+		var changeToLetter = String.fromCharCode(event.keyCode);
+		console.log(changeToLetter);
+		
+
+});
+
+	
 		
 // check if guess is right
 
