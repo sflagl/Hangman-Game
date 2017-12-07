@@ -14,14 +14,25 @@ dancersToGuess = ['jackson', 'usher', 'timberlake', 'ciara'];
 	
 	console.log(dancerSelection);
 
+	var onScreenDanceHolder = document.getElementsByClassName("placeholder");
+
 // Create placeholders based on word length
+	
+		var generatePlaceholder;
+		
+		for (var generatePlaceholder = 0; generatePlaceholder < dancerSelection.length; generatePlaceholder++) {
+		var createPlaceholder = dancerHolder.push('_ ');
+		onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
+		}
+		console.log(dancerHolder);
+
 
 	
-	for (var i = 0; i < dancerSelection.length; i++) {
-		var createPlaceholder = dancerHolder.push('_');
-
-	}
-	console.log(dancerHolder);
+	// for (var i = 0; i < dancerSelection.length; i++) {
+	// 	var createPlaceholder = dancerHolder.push('_ ');
+	// 	onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
+	// }
+	// console.log(dancerHolder);
 
 // Get users guess
 	
