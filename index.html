@@ -4,14 +4,47 @@
 		<title>Hangman - SGF</title>
 		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 	</head>
-	<body>
+	<body class="main-bg img-responsive">
 		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1 class="f-color-w f-mont m-t-40">Hangman: Dance Edition</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container text-center b-grey p-all-50 m-t-40">
+		<div class="row">
+			<div class="col-md-12">
+				<p class="f-mont f-s-20 text-right">Guesses Left:<span></span></p>
+			</div>
+			<div class="col-md-12 m-b-40">
+				<p class="f-mont f-s-20">Press any key to get started!</p>
 			<div class="placeholder"></div>
+			</div>
+			
+			<div class="col-md-5 border-brown p-all-20">
+				<p class="f-mont f-s-20">Right Letters guessed</p>
 			<div class="guessedRight"></div>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-5 border-black p-all-20">
+				<p class="f-mont f-s-20">Wrong Letters guessed</p>
 			<div class="guessedWrong"></div>
+			</div>
+			<div class="col-md-5 border-brown p-all-20 m-t-20">
+				<p class="f-mont f-s-20">Wins</p>
+			<div class=""></div>
+			</div>
+			<div class="col-md-2 m-t-20"></div>
+			<div class="col-md-5 border-black p-all-20 m-t-20">
+				<p class="f-mont f-s-20">Loses</p>
+			<div class=""></div>
+			</div>
+		</div>
 		</div>
 		<script type="text/javascript" src="assets/javascript/game.js"></script>
 	</body>

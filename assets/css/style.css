@@ -1,0 +1,56 @@
+.main-bg{
+    background-image: url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1950&q=80');
+}
+
+
+.b-grey{
+    background-color:lightgray;
+    opacity: .4;
+    min-height: 400px;
+}
+
+.p-all-50{
+    padding: 50px;
+}
+
+.p-all-20{
+    padding: 20px;
+}
+
+.m-t-20{
+    margin-top:20px;
+}
+
+.m-t-40{
+    margin-top:40px;
+}
+
+
+
+.m-b-40{
+    margin-bottom:40px;
+}
+
+
+.f-color-w{
+    color:white;
+}
+
+.f-mont{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.f-s-20{
+    font-size: 20px;
+}
+
+.border-black{
+    border: 1px solid #000;
+}
+
+
+.border-brown{
+    border: 1px solid #8B6513;
+}
+
