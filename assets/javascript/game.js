@@ -21,8 +21,6 @@ dancersToGuess = ['janet', 'michael', 'timberlake', 'beyonce'];
 
 	var onScreenDanceHolder = document.getElementsByClassName("placeholder");
 
-
-
 	var docRightGuess = document.getElementsByClassName('guessedRight');
 
 	var docWrongGuess = document.getElementsByClassName('guessedWrong');
@@ -38,39 +36,38 @@ dancersToGuess = ['janet', 'michael', 'timberlake', 'beyonce'];
 	var generatePlaceholder;
 
 
-
 		for (var generatePlaceholder = 0; generatePlaceholder < dancerSelection.length; generatePlaceholder++) {
 
-		var createPlaceholder = dancerHolder.push('_ ');
-		onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
+			var createPlaceholder = dancerHolder.push('_ ');
+			onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
 		}
 
 
 		function nextQuestion(){
 
-				onScreenDanceHolder.innerHTML = '';
+			onScreenDanceHolder.innerHTML = '';
 
-				dancerHolder.splice(0,dancerHolder.length);
-
-
-				wrongArray.splice(0,wrongArray.length);
-				rightArray.splice(0,rightArray.length);
-
-				document.getElementById("right").innerHTML = '';
-				document.getElementById("wrong").innerHTML = '';
+			dancerHolder.splice(0,dancerHolder.length);
 
 
-				arrNum = Math.floor(Math.random() * dancersToGuess.length);
+			wrongArray.splice(0,wrongArray.length);
+			rightArray.splice(0,rightArray.length);
 
-				dancerSelection = dancersToGuess[arrNum];
+			document.getElementById("right").innerHTML = '';
+			document.getElementById("wrong").innerHTML = '';
 
-				for (var generatePlaceholder = 0; generatePlaceholder < dancerSelection.length; generatePlaceholder++) {
 
-				var createPlaceholder = dancerHolder.push('_ ');
-				onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
-				}
+			arrNum = Math.floor(Math.random() * dancersToGuess.length);
 
-				console.log(dancerSelection);
+			dancerSelection = dancersToGuess[arrNum];
+
+			for (var generatePlaceholder = 0; generatePlaceholder < dancerSelection.length; generatePlaceholder++) {
+
+			var createPlaceholder = dancerHolder.push('_ ');
+			onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
+			}
+
+			console.log(dancerSelection);
 		}
 
 	
@@ -96,13 +93,25 @@ dancersToGuess = ['janet', 'michael', 'timberlake', 'beyonce'];
 			// console.log(true);
 			rightArray.push(changeToLetter);
 
+			// looking for duplicate characters
 
-			// console.log(rightArray);
-			dancerHolder[dancerSelection.indexOf(changeToLetter)] = changeToLetter;
-			// console.log(changeToLetter);
+			for(var i=0; i< dancerSelection.length; i++){
+
+				if(dancerSelection[i] == changeToLetter){ 
+
+					dancerHolder[i] = changeToLetter;
+					
+				}
+			}
 
 			onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
-			docRightGuess[0].innerHTML = rightArray;
+
+			// console.log(rightArray);
+			// dancerHolder[dancerSelection.indexOf(changeToLetter)] = changeToLetter;
+			// console.log(changeToLetter);
+
+			// onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
+			// docRightGuess[0].innerHTML = rightArray;
 
 			if(dancerHolder.join('') == dancerSelection) {
 				alert('you win!');
