@@ -1,6 +1,6 @@
 // creat an array of words
 
-dancersToGuess = ['janet', 'usher', 'chris', 'michael'];
+dancersToGuess = ['janet', 'michael', 'timberlake', 'beyonce'];
 
 // Choose word randomly
 
@@ -17,9 +17,10 @@ dancersToGuess = ['janet', 'usher', 'chris', 'michael'];
 	var wrongArray = [];
 	var dancerHolder = [];
 	
-	// console.log(dancerSelection);
+	console.log(dancerSelection);
 
 	var onScreenDanceHolder = document.getElementsByClassName("placeholder");
+
 
 
 	var docRightGuess = document.getElementsByClassName('guessedRight');
@@ -45,6 +46,32 @@ dancersToGuess = ['janet', 'usher', 'chris', 'michael'];
 		}
 
 
+		function nextQuestion(){
+
+				onScreenDanceHolder.innerHTML = '';
+
+				dancerHolder.splice(0,dancerHolder.length);
+
+
+				wrongArray.splice(0,wrongArray.length);
+				rightArray.splice(0,rightArray.length);
+
+				document.getElementById("right").innerHTML = '';
+				document.getElementById("wrong").innerHTML = '';
+
+
+				arrNum = Math.floor(Math.random() * dancersToGuess.length);
+
+				dancerSelection = dancersToGuess[arrNum];
+
+				for (var generatePlaceholder = 0; generatePlaceholder < dancerSelection.length; generatePlaceholder++) {
+
+				var createPlaceholder = dancerHolder.push('_ ');
+				onScreenDanceHolder[0].innerHTML = dancerHolder.join('');
+				}
+
+				console.log(dancerSelection);
+		}
 
 	
 
@@ -63,10 +90,13 @@ dancersToGuess = ['janet', 'usher', 'chris', 'michael'];
 		// var changeToCode = event.keyCode;
 		var changeToLetter = String.fromCharCode(event.keyCode);
 		
+
 		// if users guess is right
 		if(dancerSelection.indexOf(changeToLetter) > -1){
 			// console.log(true);
 			rightArray.push(changeToLetter);
+
+
 			// console.log(rightArray);
 			dancerHolder[dancerSelection.indexOf(changeToLetter)] = changeToLetter;
 			// console.log(changeToLetter);
@@ -80,7 +110,7 @@ dancersToGuess = ['janet', 'usher', 'chris', 'michael'];
 				guesses++;
 				document.getElementById("guesses").innerHTML = guesses;
 				document.getElementById("winHolder").innerHTML = wins;
-
+				nextQuestion();
 
 			}
 		} 
@@ -100,16 +130,15 @@ dancersToGuess = ['janet', 'usher', 'chris', 'michael'];
 			document.getElementById("loseHolder").innerHTML = loses;
 			document.getElementById("guesses").innerHTML = guesses;
 			console.log('you' + loses);
-			wrongArray.splice(0,wrongArray.length);
-			rightArray.splice(0,rightArray.length);
-			alert('you guessed to many');
-			onScreenDanceHolder = '';
 			
-
-
+			alert('you guessed to many');
+			nextQuestion();
+			
 
 		} else if (guesses === 0){
 			alert('you lost!');
+
+
 
 		} else{
 
